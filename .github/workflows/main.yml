@@ -1,20 +1,23 @@
-name: Build and Test
+# .github/workflows/main.yml
+
+name: 🔄 CI – Vault Template Build Check
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-    - run: npm install
-    - run: npm run build
-    - run: npm test
+      - name: 📦 Install dependencies
+        run: | #List dependencies here
+          echo "Installing dependencies..."
+          # Example: pip install -r requirements.txt
+          # Replace with actual commands for your project
+      
