@@ -1,0 +1,43 @@
+# 📄 Repository Template Configuration
+
+id: repository-template-general
+title: "Repository Template – General"
+type: template
+category: repo
+section: templates
+role: boilerplate
+folder: system/templates
+tags: [template, general, repository, boilerplate, pticalin]
+version: 1.0
+
+# 📊 Status & Lifecycle
+status: stable
+visibility: public
+created: 2025-05-30
+updated: 2025-05-30
+
+# 📚 Context & Description
+summary: >
+  A clean, modular, and delightful template for general-purpose GitHub repositories. 
+  Includes styled documentation, custom issue/PR templates, license, and sponsor support.
+
+# 🧱 Relationships
+parent: "repository-templates"
+children: []
+friends: ["obsidian-plugin-template"]
+related: ["vaultos-subplugin-template"]
+
+# 🌐 Dynamic GitHub URLs
+github:
+  base: "https://github.com/<%= github.user %>/<%= github.repo %>"
+  readme: "<%= github.base %>/blob/main/README.md"
+  contributing: "<%= github.base %>/blob/main/CONTRIBUTING.md"
+  license: "<%= github.base %>/blob/main/LICENSE"
+  issues: "<%= github.base %>/issues"
+  discussions: "<%= github.base %>/discussions"
+  sponsor: "https://github.com/sponsors/<%= github.user %>"
+
+# 💌 Attribution
+author: "Charlie (PtiCalin)"
+maintainers: ["<%= github.user %>"]
+sponsor_link: "<%= github.sponsor %>"
