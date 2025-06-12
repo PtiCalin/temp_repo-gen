@@ -50,9 +50,9 @@ npm run dev       # or your preferred dev command
 We welcome all kinds of contributions! 💡
 
 This repo uses custom templates for:
-- [🐛 Bug Reports](./.github/ISSUE_TEMPLATE/bug_report.md)
-- [🌟 Feature Requests](./.github/ISSUE_TEMPLATE/feature_request.md)
-- [📦 Pull Requests](./.github/PULL_REQUEST_TEMPLATE.md)
+- [🐛 Bug Reports](./.github/ISSUE_TEMPLATE/bug.yml)
+- [🌟 Feature Requests](./.github/ISSUE_TEMPLATE/feature-request.yml)
+- [📦 Pull Requests](./.github/pull_request_template.md)
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started.  
 Or join us in [💬 GitHub Discussions](https://github.com/your-username/general-template-repo/discussions) to share ideas.
