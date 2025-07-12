@@ -8,3 +8,6 @@ documentation:
   - '(?i)docs'
 question:
   - '(?i)\?'
+chore:
+  - '(?i)^chore'
+  - '(?i)cleanup'

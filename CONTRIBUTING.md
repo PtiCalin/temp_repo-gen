@@ -54,6 +54,21 @@ Once your changes are pushed:
 3. Reference related issues (e.g. `Closes #3`)
 4. Write clearly and kindly — we want to celebrate your work!
 
+### PR Titles & Labels
+
+Pull request titles are checked by CI and must start with one of:
+
+- `feat:` for new features
+- `fix:` for bug fixes
+- `docs:` for documentation updates
+- `chore:` for maintenance tasks
+
+Tag your PRs and issues with helpful labels like `bug`, `feature`, `documentation`, or `chore`. A `pr-tracking` label is used automatically for tracking issues created by our workflow.
+
+### Troubleshooting CI
+
+CI runs on every push and pull request. You can monitor runs in the **Actions** tab on GitHub. If a job fails, check the logs there for details.
+
 ---
 
 ## 🤖 Code Style & Conventions
