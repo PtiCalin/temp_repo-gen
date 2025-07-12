@@ -1,0 +1,10 @@
+bug:
+  - '(?i)^bug'
+  - '(?i)🐛'
+feature:
+  - '(?i)^feat'
+  - '(?i)feature'
+documentation:
+  - '(?i)docs'
+question:
+  - '(?i)\?'
