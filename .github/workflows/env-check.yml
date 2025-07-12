@@ -1,0 +1,9 @@
+name: CI Environment Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: ./ci/env-check.yml

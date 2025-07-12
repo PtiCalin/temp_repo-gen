@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
+        if: github.repository == 'PtiCalin/temp_repo-gen'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

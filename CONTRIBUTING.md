@@ -65,6 +65,8 @@ Pull request titles are checked by CI and must start with one of:
 
 Tag your PRs and issues with helpful labels like `bug`, `feature`, `documentation`, or `chore`. A `pr-tracking` label is used automatically for tracking issues created by our workflow.
 
+If the **PR title** check fails, edit your pull request title to use the correct prefix (e.g. `feat: add new thing`) and push again. See the CI output for a direct link to update the title.
+
 ### Troubleshooting CI
 
 CI runs on every push and pull request. You can monitor runs in the **Actions** tab on GitHub. If a job fails, check the logs there for details.

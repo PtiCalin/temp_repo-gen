@@ -1,0 +1,44 @@
+name: Publish Packages
+
+on:
+  push:
+    paths:
+      - 'packages/**'
+  workflow_dispatch:
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: changed
+        run: |
+          pkgs=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.sha }} | grep '^packages/[^/\n]*/' | cut -d/ -f2 | sort -u | tr '\n' ' ')
+          if [ -z "$pkgs" ]; then
+            echo "matrix=[]" >> "$GITHUB_OUTPUT"
+          else
+            json=$(printf '"%s",' $pkgs | sed 's/,$//')
+            echo "matrix={\"package\":[${json}]}" >> "$GITHUB_OUTPUT"
+          fi
+      - id: set
+        run: echo "matrix=${{ steps.changed.outputs.matrix }}" >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: detect
+    if: needs.detect.outputs.matrix != '' && needs.detect.outputs.matrix != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.detect.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          registry-url: https://npm.pkg.github.com
+      - name: Publish
+        run: |
+          cd packages/${{ matrix.package }}
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -13,3 +13,9 @@
 - name: pr-tracking
   color: cfd3d7
   description: Tracking auto-generated issues for pull requests
+- name: question
+  color: d876e3
+  description: Further information is requested
+- name: merged
+  color: 0e8a16
+  description: Pull request was merged
