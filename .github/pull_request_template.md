@@ -1,28 +1,39 @@
-# 🚀 Pull Request
+# 🚀 Pull Request: [TITLE HERE]
 
-## Summary
-Describe your changes in detail.
+## 🧠 Summary
+Briefly describe what this PR does and why it matters.
 
-## Related Issues
-<!-- e.g., Closes #123 -->
+- ✨ Feature:
+- 🐛 Bugfix:
+- 🧹 Refactor:
+- 🧪 Test/CI:
+- 📘 Docs:
 
-## Type of Change
-- [ ] 🐛 Bug fix
-- [ ] ✨ New feature
-- [ ] 📝 Documentation update
-- [ ] 🧹 Chore
-- [ ] 💡 Other
+---
 
-## Proposed Changes
-<!-- List your changes here -->
+## ✅ Checklist
 
-## Steps to Test
-Provide a step-by-step list for testing this PR.
+- [ ] PR title follows [Conventional Commits](docs/conventions/commit-format.md)
+- [ ] Linked to related issue (if applicable)
+- [ ] Passes CI: `lint`, `test`, `build`
+- [ ] Included changes in `/docs`, `/scripts`, or `/tests` if needed
+- [ ] Project item auto-linked via CI
 
-## Checklist
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my code
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] I have added necessary documentation (if appropriate)
-- [ ] Any dependent changes have been merged and published
+---
 
+## 📎 Linked Issues or Projects
+
+Closes #[ISSUE-ID]  
+🗂️ Project status: `To Do` → `In Progress` → `Done` (CI will update this)
+
+---
+
+## 🔍 Preview
+
+Any screenshots, schema diffs, terminal output? Drop here 👇
+
+---
+
+## 🤝 Contributor Notes (Optional)
+
+Anything the reviewer should know? Code smells, TODOs, potential follow-up?
