@@ -1,0 +1,29 @@
+name: \U0001F5FA\FE0F Epic
+description: Track a large effort comprised of many tasks.
+title: "[Epic]: "
+labels:
+  - epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to outline a big goal that will require multiple issues or PRs.
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What is the end goal of this epic?
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Major tasks
+      description: List the high level tasks required to complete this epic.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Any other background information.

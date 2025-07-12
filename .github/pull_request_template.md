@@ -1,33 +1,28 @@
-# 📝 Pull Request Summary
+# 🚀 Pull Request
 
-## 📌 What does this PR do?
-<!-- Brief description of the changes -->
+## Summary
+Describe your changes in detail.
 
-## 🔍 Related Issues
-<!-- Reference any related issues: 
-e.g., Closes #12, Addresses #34 
--->
+## Related Issues
+<!-- e.g., Closes #123 -->
 
-## ✅ Type of Change
-<!-- Check all that apply -->
-- [ ] ✨ New content
-- [ ] 🛠 Refactor
+## Type of Change
 - [ ] 🐛 Bug fix
-- [ ] 🌟 Feature addition
-- [ ] 🧹 Cleanup
-- [ ] 🧪 Experiment / Test
-- [ ] 🧭 Documentation
-- [ ] 🎯 Goal-related update
+- [ ] ✨ New feature
+- [ ] 📝 Documentation update
+- [ ] 🧹 Chore
+- [ ] 💡 Other
 
-## 🧠 Description of Changes
-<!-- Detailed description of what was added/changed and why -->
+## Proposed Changes
+<!-- List your changes here -->
 
-## 🔄 How to Test
-<!-- Steps for testing the PR, if needed -->
+## Steps to Test
+Provide a step-by-step list for testing this PR.
 
-## 📋 Checklist
-<!-- Final checks before merging -->
-- [ ] I have reviewed my changes
-- [ ] I have tested the changes
-- [ ] The PR title follows the project's naming conventions
-- [ ] Related issues are linke
+## Checklist
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my code
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] I have added necessary documentation (if appropriate)
+- [ ] Any dependent changes have been merged and published
+

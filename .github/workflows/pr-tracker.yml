@@ -1,0 +1,75 @@
+name: PR Issue Tracker
+
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        id: tracker
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const issueTitle = `Tracking PR #${pr.number}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'pr-tracking',
+              state: 'all'
+            });
+            let issue = issues.find(i => i.title.startsWith(issueTitle));
+            if (!issue && context.payload.action === 'opened') {
+              const res = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `${issueTitle}: ${pr.title}`,
+                body: `Auto-created to track PR #${pr.number} by @${pr.user.login}.`,
+                assignees: [pr.user.login],
+                labels: ['pr-tracking']
+              });
+              issue = res.data;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `Tracking Issue: #${issue.number}`
+              });
+            }
+            core.setOutput('issue', issue ? issue.number : '');
+      - uses: actions/github-script@v7
+        if: github.event.action == 'synchronize'
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const issueNumber = '${{ steps.tracker.outputs.issue }}';
+            if (issueNumber) {
+              const commits = context.payload.commits.map(c => `- ${c.message}`).join('\n');
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: parseInt(issueNumber),
+                body: `New commits pushed:\n${commits}`
+              });
+            }
+      - uses: actions/github-script@v7
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        with:
+          script: |
+            const issueNumber = '${{ steps.tracker.outputs.issue }}';
+            if (issueNumber) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: parseInt(issueNumber),
+                labels: ['merged']
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: parseInt(issueNumber),
+                state: 'closed'
+              });
+            }
