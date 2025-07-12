@@ -1,0 +1,21 @@
+name: Add Items to Project
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read config
+        run: echo "PROJECT_URL=$(jq -r .project_url .github/project-config.json)" >> $GITHUB_ENV
+      - uses: actions/add-to-project@v1
+        with:
+          project-url: ${{ env.PROJECT_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          status: "To Do"
+

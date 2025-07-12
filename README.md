@@ -23,6 +23,7 @@ This repo is designed for smooth setup, clear structure, and joyful tinkering.
 - 📜 MIT License included  
 - 🧭 Custom issue and pull request templates  
 - 💬 GitHub Discussions enabled
+- 🏁 This template auto-connects your issues and PRs to a GitHub Project board for sprint-style tracking
 - 💖 Sponsor link to support creative tooling
 - 🐳 Ready-to-use [devcontainer](./.devcontainer) for VS Code
 - 🛡️ Automatic dependency updates via Dependabot
