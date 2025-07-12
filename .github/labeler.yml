@@ -1,3 +1,4 @@
+# 🏷️ Automatic Label Configuration
 bug:
   - '(?i)^bug'
   - '(?i)🐛'

@@ -1,3 +1,4 @@
+# 🚀 Continuous Integration
 name: CI
 
 on:
@@ -10,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Lint
-        run: echo "Linting..."
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y shellcheck shfmt
+      - name: Lint scripts and workflows
+        run: ./scripts/lint.sh
 
   test:
     runs-on: ubuntu-latest
