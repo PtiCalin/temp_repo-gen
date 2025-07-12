@@ -22,8 +22,11 @@ This repo is designed for smooth setup, clear structure, and joyful tinkering.
 - 🌿 Clean and modular folder layout  
 - 📜 MIT License included  
 - 🧭 Custom issue and pull request templates  
-- 💬 GitHub Discussions enabled  
-- 💖 Sponsor link to support creative tooling  
+- 💬 GitHub Discussions enabled
+- 💖 Sponsor link to support creative tooling
+- 🐳 Ready-to-use [devcontainer](./.devcontainer) for VS Code
+- 🛡️ Automatic dependency updates via Dependabot
+- 🔒 CodeQL workflow for security scanning
 
 ---
 
@@ -41,6 +44,13 @@ cd general-template-repo
 ```bash
 npm install       # or pip install -r requirements.txt
 npm run dev       # or your preferred dev command
+```
+
+You can also spin up a ready-to-go development container with VS Code:
+
+```bash
+# Requires Docker and the VS Code Dev Containers extension
+devcontainer open .
 ```
 
 ---
