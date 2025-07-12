@@ -1,0 +1,15 @@
+{
+  "name": "Template Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "bash scripts/setup.sh"
+}
