@@ -1,23 +1,16 @@
-# .github/workflows/main.yml
-
-name: 🔄 CI – Vault Template Build Check
+# 🔄 Example Build
+name: build
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📦 Install dependencies
-        run: | #List dependencies here
-          echo "Installing dependencies..."
-          # Example: pip install -r requirements.txt
-          # Replace with actual commands for your project
-      
+      - uses: actions/checkout@v4
+      - name: Build
+        run: echo "Building project..."

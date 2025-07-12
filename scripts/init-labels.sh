@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
+# ───────────────────────────────────────────────────────────────
+# 🏷️  Initialize GitHub Labels
+# Reads .github/labels.yml and creates labels via the gh CLI.
+# 🧠 Usage: ./scripts/init-labels.sh
+# Requires: gh (GitHub CLI) authenticated with repo scope.
+# ───────────────────────────────────────────────────────────────
 set -euo pipefail
 
+labels_file=".github/labels.yml"
+
 if ! command -v gh &>/dev/null; then
-  echo "gh CLI is required" >&2
+  echo "❌ gh CLI is required" >&2
   exit 1
 fi
 
-labels_file=".github/labels.yml"
+[ -f "$labels_file" ] || {
+  echo "❌ $labels_file not found" >&2
+  exit 1
+}
 
 while read -r line; do
   if [[ $line == -\ name:* ]]; then

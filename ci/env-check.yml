@@ -1,3 +1,4 @@
+# 🔍 Verify CI Environment
 name: Environment Check
 
 on:

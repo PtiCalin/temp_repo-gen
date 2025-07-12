@@ -1,3 +1,4 @@
+# 🛡️ Environment Check
 name: CI Environment Check
 
 on:

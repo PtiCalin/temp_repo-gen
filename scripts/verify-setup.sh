@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 # ───────────────────────────────────────────────────────────────
-# 🛠 Project Setup
-# Installs dependencies needed for local development.
-# 🧠 Usage: ./scripts/setup.sh
+# 🔍 Verify Setup
+# Ensures required linters are installed.
+# 🧠 Usage: ./scripts/verify-setup.sh
 # ───────────────────────────────────────────────────────────────
 set -euo pipefail
 
-echo "🔧 Installing dependencies..."
-# Add your setup commands here
+missing=()
+command -v shellcheck >/dev/null || missing+=(shellcheck)
+command -v npx >/dev/null || missing+=(npm)
+command -v shfmt >/dev/null || missing+=(shfmt)
+
+if [ ${#missing[@]} -ne 0 ]; then
+  echo "❌ Missing tools: ${missing[*]}" >&2
+  exit 1
+fi
+
+echo "✅ All required tools available"
