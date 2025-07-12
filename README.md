@@ -32,6 +32,8 @@ This repo is designed for smooth setup, clear structure, and joyful tinkering.
 
 ## 🚀 Getting Started
 
+📚 View coding conventions and architecture docs in `/docs/conventions`
+
 Clone this repo and start building:
 
 ```bash

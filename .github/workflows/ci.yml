@@ -26,7 +26,8 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
+      - id: pr_title_check
+        uses: amannn/action-semantic-pull-request@v5
         if: github.repository == 'PtiCalin/temp_repo-gen'
         continue-on-error: true
         with:
@@ -37,3 +38,6 @@ jobs:
             chore
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit format help
+        if: steps.pr_title_check.outcome == 'failure'
+        run: echo "Please see docs/conventions/commit-format.md" && exit 1
