@@ -39,6 +39,26 @@ git clone https://github.com/your-username/general-template-repo.git
 cd general-template-repo
 ```
 
+Initialize default issue labels:
+
+```bash
+./scripts/init-labels.sh
+```
+
+---
+
+## 📦 Package Publishing
+
+Packages placed in the `packages/` folder can be published automatically when
+changes are pushed. The workflow detects which subfolders changed and runs
+`npm publish` for each one. Provide an `NPM_TOKEN` secret with publish rights.
+
+Package status can be listed with:
+
+```bash
+node utils/package-status.js
+```
+
 ### 🛠 Local Setup
 
 ```bash
