@@ -51,8 +51,10 @@ You can also spin up a ready-to-go development container with VS Code:
 ```bash
 # Requires Docker and the VS Code Dev Containers extension
 devcontainer open .
+
 ```
 
+🔒 To apply branch protection rules, run `./scripts/setup-branch-protection.sh` or follow the guide in `docs/branch-protection.md`.
 ---
 
 ## 🤝 Contributing
