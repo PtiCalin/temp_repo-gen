@@ -3,6 +3,8 @@
 ## 🧠 Summary
 Briefly describe what this PR does and why it matters.
 
+For deeper context, see the [Architecture wiki](../../wiki/Architecture).
+
 - ✨ Feature:
 - 🐛 Bugfix:
 - 🧹 Refactor:

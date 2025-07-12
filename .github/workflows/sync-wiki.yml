@@ -1,0 +1,23 @@
+name: sync-wiki
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wiki-starter/**'
+      - '.github/workflows/sync-wiki.yml'
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Sync wiki
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          ./scripts/init-wiki.sh "$OWNER" "$REPO"
