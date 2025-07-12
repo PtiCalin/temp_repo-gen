@@ -62,6 +62,8 @@ Once your changes are pushed:
 - Stick to existing folder and naming conventions
 - Keep code modular, clean, and minimal where possible
 
+### Branch Protection
+Main branch is protected. All changes require pull requests with passing `lint`, `test`, and `build` checks. Force pushes and deletions are disabled and linear history is enforced. Repository admins and Dependabot can bypass these rules. See [docs/branch-protection.md](docs/branch-protection.md) for details.
 ---
 
 ## 💖 What We Value

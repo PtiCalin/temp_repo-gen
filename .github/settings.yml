@@ -9,8 +9,12 @@ branches:
         contexts:
           - lint
           - test
+          - build
       required_pull_request_reviews: true
-      enforce_admins: true
+      enforce_admins: false
       required_linear_history: true
       allow_force_pushes: false
       allow_deletions: false
+      bypass_pull_request_allowances:
+        apps:
+          - dependabot
