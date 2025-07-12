@@ -33,7 +33,10 @@ This repo is designed for smooth setup, clear structure, and joyful tinkering.
 
 ## 🚀 Getting Started
 
-📚 View coding conventions and architecture docs in `/docs/conventions`
+📚 View coding conventions and architecture docs in `/docs/conventions`.
+For commit style and PR expectations see [CONTRIBUTING.md](CONTRIBUTING.md) and
+[Conventional Commits](docs/conventions/commit-format.md). The folder layout is
+explained in [docs/conventions/folder-structure.md](docs/conventions/folder-structure.md).
 
 Clone this repo and start building:
 
