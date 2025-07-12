@@ -1,7 +1,9 @@
 # ✨ Contributing Guide
 
-Thank you for considering a contribution to this project!  
+Thank you for considering a contribution to this project!
 This repo is built on curiosity, creativity, and care — and *you* are part of that magic.
+
+For detailed setup steps and architecture decisions, visit the [project wiki](../../wiki).
 
 ---
 

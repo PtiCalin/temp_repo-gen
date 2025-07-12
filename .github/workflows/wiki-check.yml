@@ -1,0 +1,24 @@
+name: wiki-check
+on:
+  pull_request:
+    paths:
+      - 'wiki-starter/**'
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compare wiki contents
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.wiki.git wiki
+          cp wiki-starter/*.md wiki/
+          cd wiki
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Wiki is out of sync. Run scripts/init-wiki.sh" >&2
+            git status --porcelain
+            exit 1
+          else
+            echo "Wiki up to date"
+          fi

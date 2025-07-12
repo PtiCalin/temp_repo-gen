@@ -51,6 +51,14 @@ Initialize default issue labels:
 ./scripts/init-labels.sh
 ```
 
+## 📚 Project Wiki
+
+This project includes a companion [GitHub Wiki](../../wiki) with extended documentation:
+- Setup Guide
+- Architecture Diagrams
+- Contribution Guide
+- Terminology Glossary
+
 ---
 
 ## 📦 Package Publishing
