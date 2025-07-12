@@ -5,6 +5,17 @@ This repo is built on curiosity, creativity, and care — and *you* are part of 
 
 ---
 
+## 📚 Project Conventions
+
+To keep code and structure consistent across teams and clones, this project follows a unified set of internal conventions:
+
+- 🔤 [Naming Rules](docs/conventions/naming.md)
+- 🗂️ [Folder Structure](docs/conventions/folder-structure.md)
+- 🧼 [Code Style Guide](docs/conventions/code-style.md)
+- 📝 [Commit Format](docs/conventions/commit-format.md)
+
+All PRs and CI checks rely on these conventions. You don’t have to memorize them — they’re embedded into the automation too 💜
+
 ## 🧩 Ways to Contribute
 
 🪄 Whether you're a coder, documenter, designer, or dreamer — here are some great ways to help:
