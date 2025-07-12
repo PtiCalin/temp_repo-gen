@@ -16,6 +16,9 @@ To keep code and structure consistent across teams and clones, this project foll
 
 All PRs and CI checks rely on these conventions. You don’t have to memorize them — they’re embedded into the automation too 💜
 
+### Project Board
+Issues and pull requests are automatically added to the project board. Status updates happen when PRs merge so you can track progress at a glance.
+
 ## 🧩 Ways to Contribute
 
 🪄 Whether you're a coder, documenter, designer, or dreamer — here are some great ways to help:

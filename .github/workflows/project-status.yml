@@ -1,0 +1,44 @@
+name: Update Project Status
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  mark-done:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update status
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const config = JSON.parse(fs.readFileSync('.github/project-config.json', 'utf8'));
+            const prId = context.payload.pull_request.node_id;
+            const query = await github.graphql(`
+              query($owner:String!,$repo:String!,$pr:Int!){
+                repository(owner:$owner,name:$repo){
+                  pullRequest(number:$pr){
+                    projectItems(first:1){ nodes { id } }
+                  }
+                }
+              }
+            `, {owner: context.repo.owner, repo: context.repo.repo, pr: context.payload.pull_request.number});
+            const itemId = query.repository.pullRequest.projectItems.nodes[0].id;
+            await github.graphql(`
+              mutation($project:String!,$item:String!,$field:String!,$option:String!){
+                updateProjectV2ItemFieldValue(input:{projectId:$project,itemId:$item,fieldId:$field,value:{singleSelectOptionId:$option}}){
+                  clientMutationId
+                }
+              }
+            `, {project: config.project_url.split('/').pop(), item: itemId, field: config.status_field_id, option: config.done_option_id});
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: '🎉 Status set to Done'
+            });
+
