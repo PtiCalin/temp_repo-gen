@@ -12,7 +12,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - id: changed
         run: |
           pkgs=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.sha }} | grep '^packages/[^/\n]*/' | cut -d/ -f2 | sort -u | tr '\n' ' ')
@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix: ${{ fromJson(needs.detect.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           registry-url: https://npm.pkg.github.com

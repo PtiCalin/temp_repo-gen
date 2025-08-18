@@ -10,7 +10,7 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Read config
         run: echo "PROJECT_URL=$(jq -r .project_url .github/project-config.json)" >> $GITHUB_ENV
       - uses: actions/add-to-project@v1
