@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: pr_title_check
-        uses: amannn/action-semantic-pull-request@v5
+        uses: amannn/action-semantic-pull-request@v6
         if: github.repository == 'PtiCalin/temp_repo-gen'
         continue-on-error: true
         with:
