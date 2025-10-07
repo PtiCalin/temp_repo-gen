@@ -7,7 +7,7 @@ jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Compare wiki contents
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
