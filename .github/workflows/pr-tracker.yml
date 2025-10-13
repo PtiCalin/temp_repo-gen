@@ -8,7 +8,7 @@ jobs:
   manage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         if: github.repository == 'PtiCalin/temp_repo-gen'
         continue-on-error: true
         id: tracker
@@ -41,7 +41,7 @@ jobs:
               });
             }
             core.setOutput('issue', issue ? issue.number : '');
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         if: github.event.action == 'synchronize' && github.repository == 'PtiCalin/temp_repo-gen'
         continue-on-error: true
         with:
@@ -57,7 +57,7 @@ jobs:
                 body: `New commits pushed:\n${commits}`
               });
             }
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         if: github.event.action == 'closed' && github.event.pull_request.merged == true && github.repository == 'PtiCalin/temp_repo-gen'
         continue-on-error: true
         with:
